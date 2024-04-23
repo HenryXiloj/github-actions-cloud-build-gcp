@@ -16,6 +16,5 @@ steps:
     - 'pipefail'
     - '-c'
     - |-
-      gcloud container clusters get-credentials ${_CLUSTER_INFO} --zone ${_REGION_INFO} --project ${_GKE_PROJ_NAME} --internal-ip
-      kubectl config set-context --current --namespace=${_NAMESPACE_INFO}
-      cd gcp-alerts/${_ENV}
+      gcloud container clusters get-credentials my-gke-cluster --region us-central1 --project terraform-workspace-413615 --internal-ip
+      kubectl config set-context --current --namespace=test
