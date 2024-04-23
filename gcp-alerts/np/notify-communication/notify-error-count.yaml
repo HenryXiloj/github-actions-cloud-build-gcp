@@ -1,0 +1,16 @@
+apiVersion: logging.cnrm.cloud.google.com/v1beta1
+kind: LoggingLogMetric
+metadata:
+  name: "notify-error-count"
+spec:
+  filter: |
+    resource.type="k8s_container"
+    resource.labels.project_id="terraform-workspace-413615"
+    resource.labels.location="us-central1"
+    resource.labels.cluster_name="my-gke-cluster"
+    resource.labels.namespace_name="test"
+    resource.labels.container_name IN ("kubernetes-bootcamp", "kubernetes-bootcamp1", "kubernetes-bootcamp2")
+    severity>="ERROR"
+  description: "Number of errors in  service."
+  projectRef:
+    external: "projects/terraform-workspace-413615"
