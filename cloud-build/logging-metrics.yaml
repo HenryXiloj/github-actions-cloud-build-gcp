@@ -19,4 +19,3 @@ steps:
       gcloud container clusters get-credentials ${_CLUSTER_INFO} --zone ${_REGION_INFO} --project ${_GKE_PROJ_NAME} --internal-ip
       kubectl config set-context --current --namespace=${_NAMESPACE_INFO}
       cd gcp-alerts/${_ENV}
-      kubectl apply ./${_NAMESPACE_INFO} -n ${_NAMESPACE_INFO}
